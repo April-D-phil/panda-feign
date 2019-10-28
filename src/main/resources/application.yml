@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.3.30:8005/eureka/
+  instance:
+    instance-id: 192.168.3.30:${server.port}
+    prefer-ip-address: true
+    status-page-url-path: /index.html #配置在注册中心界面服务列表的Status列点击跳转到项目用
+    
+server:
+  port: 8025
+
+spring:
+  application:
+    name: service-feign
+
+feign:
+  hystrix:
+    enabled: true #启动feign自带的熔断器
+
+
